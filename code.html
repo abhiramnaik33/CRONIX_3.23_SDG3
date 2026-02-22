@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RespondAI | Emergency Response AI API</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#1b0d0d",
+                        "navy-deep": "#0a0505",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1b0d0d] dark:text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#f3e7e7] dark:border-[#332222]">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-2 text-[#1b0d0d] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black tracking-tight">RespondAI</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#problem">Problem</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#solution">Solution</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#api">API</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#pricing">Pricing</a>
+</nav>
+<div class="flex gap-3">
+<button class="hidden sm:flex min-w-[100px] items-center justify-center rounded-lg h-10 px-4 bg-[#f3e7e7] dark:bg-[#332222] text-[#1b0d0d] dark:text-white text-sm font-bold">
+                    Login
+                </button>
+<button class="flex min-w-[120px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">
+                    Get Started
+                </button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-16 pb-24">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="flex flex-col gap-8 lg:w-1/2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider w-fit">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            v2.0 Live: Ultra-Low Latency
+                        </div>
+<h1 class="text-[#1b0d0d] dark:text-white text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
+                            Seconds Matter. <br/><span class="text-primary">Our AI Responds Faster.</span>
+</h1>
+
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-6 bg-primary text-white text-lg font-bold shadow-xl shadow-primary/30">
+                                Get API Key
+                            </button>
+<button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-6 bg-[#f3e7e7] dark:bg-[#332222] text-[#1b0d0d] dark:text-white text-lg font-bold">
+                                Documentation
+                            </button>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="relative rounded-2xl overflow-hidden aspect-square bg-gradient-to-br from-primary/20 to-navy-deep/40 p-1">
+<div class="w-full h-full bg-navy-deep rounded-2xl flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+<div class="relative z-10 w-4/5 h-4/5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl flex flex-col p-6 shadow-2xl">
+<div class="flex items-center gap-2 mb-8">
+<div class="size-3 rounded-full bg-red-500"></div>
+<div class="size-3 rounded-full bg-yellow-500"></div>
+<div class="size-3 rounded-full bg-green-500"></div>
+<div class="ml-auto text-[10px] text-white/40 uppercase tracking-widest">Real-time Analysis</div>
+</div>
+<div class="space-y-4">
+<div class="h-2 w-3/4 bg-white/10 rounded"></div>
+<div class="h-2 w-1/2 bg-white/10 rounded"></div>
+<div class="h-2 w-full bg-primary/40 rounded"></div>
+<div class="h-32 w-full bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary animate-pulse">emergency</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem Section (Stats) -->
+<section class="py-20 bg-[#f3e7e7]/30 dark:bg-[#150a0a]" id="problem">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">The Cost of Latency</h2>
+<p class="text-gray-600 dark:text-gray-400">Current emergency systems are burdened by manual processes and legacy infrastructure.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-4 rounded-xl p-8 border border-[#e7cfcf] dark:border-[#332222] bg-white dark:bg-navy-deep shadow-sm">
+<p class="text-gray-500 text-sm font-bold uppercase tracking-widest">Average Delay</p>
+<p class="text-4xl font-black text-primary">8 Minutes</p>
+<p class="text-[#078807] text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12% YoY increase
+                        </p>
+<p class="text-gray-400 text-xs mt-2 italic">Seconds wasted translate to lives lost in critical cardiac events.</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-8 border border-[#e7cfcf] dark:border-[#332222] bg-white dark:bg-navy-deep shadow-sm">
+<p class="text-gray-500 text-sm font-bold uppercase tracking-widest">Dispatch Errors</p>
+<p class="text-4xl font-black text-[#1b0d0d] dark:text-white">40%</p>
+<p class="text-primary text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">warning</span> Language barriers in 1/4 calls
+                        </p>
+<p class="text-gray-400 text-xs mt-2 italic">Miscommunication leads to incorrect apparatus routing.</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-8 border border-[#e7cfcf] dark:border-[#332222] bg-white dark:bg-navy-deep shadow-sm">
+<p class="text-gray-500 text-sm font-bold uppercase tracking-widest">System Uptime</p>
+<p class="text-4xl font-black text-[#1b0d0d] dark:text-white">99.9%</p>
+<p class="text-[#078807] text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span> Enterprise Standard
+                        </p>
+<p class="text-gray-400 text-xs mt-2 italic">RespondAI ensures zero-drop availability during disasters.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Solution Section (How it Works) -->
+<section class="py-24" id="solution">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="mb-12">
+<h2 class="text-primary text-sm font-bold uppercase tracking-widest mb-2">The Process</h2>
+<h3 class="text-4xl font-bold">How RespondAI Works</h3>
+</div>
+<div class="relative">
+<!-- Progress Line -->
+<div class="absolute left-5 top-0 h-full w-0.5 bg-gradient-to-b from-primary via-[#e7cfcf] to-transparent md:left-1/2 md:-translate-x-1/2"></div>
+<div class="space-y-12 relative">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="md:w-1/2 md:text-right">
+<h4 class="text-2xl font-bold mb-2">Validation</h4>
+<p class="text-gray-600 dark:text-gray-400">Our neural engine converts multi-dialect voice to structured data with 99.2% accuracy in under 100ms.</p>
+</div>
+<div class="relative z-10 flex size-11 items-center justify-center rounded-full bg-primary text-white ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined">mic</span>
+</div>
+<div class="md:w-1/2 h-32 flex items-center justify-center md:justify-start">
+<div class="p-4 bg-white dark:bg-navy-deep border border-[#e7cfcf] dark:border-[#332222] rounded-lg shadow-sm w-full max-w-sm">
+<div class="flex gap-2 items-center mb-2">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span class="text-[10px] font-bold text-gray-400 uppercase">Input Stream</span>
+</div>
+<p class="text-xs font-mono text-primary">"Heart attack... 123 Main St... 3rd floor..."</p>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-8">
+<div class="md:w-1/2">
+<h4 class="text-2xl font-bold mb-2">Helping</h4>
+<p class="text-gray-600 dark:text-gray-400">Intelligent triage logic prioritizes the call and identifies the nearest specialized medical or fire unit.</p>
+</div>
+<div class="relative z-10 flex size-11 items-center justify-center rounded-full bg-primary text-white ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div class="md:w-1/2 h-32 flex items-center justify-center md:justify-end">
+<div class="p-4 bg-white dark:bg-navy-deep border border-[#e7cfcf] dark:border-[#332222] rounded-lg shadow-sm w-full max-w-sm">
+<div class="flex gap-2 items-center mb-2">
+<div class="size-2 rounded-full bg-blue-500"></div>
+<span class="text-[10px] font-bold text-gray-400 uppercase">AI Triage Output</span>
+</div>
+<p class="text-xs font-mono text-blue-500">Priority: 1 | Type: Cardiac | Units: ALS-1, E-4</p>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="md:w-1/2 md:text-right">
+<h4 class="text-2xl font-bold mb-2">Respond</h4>
+<p class="text-gray-600 dark:text-gray-400">Direct, automated dispatch of digital data packets to mobile terminals in emergency vehicles.</p>
+</div>
+<div class="relative z-10 flex size-11 items-center justify-center rounded-full bg-primary text-white ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined">siren</span>
+</div>
+<div class="md:w-1/2 h-32 flex items-center justify-center md:justify-start">
+<div class="p-4 bg-white dark:bg-navy-deep border border-[#e7cfcf] dark:border-[#332222] rounded-lg shadow-sm w-full max-w-sm">
+<div class="flex gap-2 items-center mb-2">
+<div class="size-2 rounded-full bg-red-500"></div>
+<span class="text-[10px] font-bold text-gray-400 uppercase">Dispatch Sent</span>
+</div>
+<p class="text-xs font-mono text-green-500">Routing to ALS-1 Unit. ETA 4.2 mins.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="py-24 bg-white dark:bg-navy-deep">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="p-8 rounded-xl bg-background-light dark:bg-background-dark border border-gray-100 dark:border-white/5 hover:border-primary/30 transition-all group">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">language</span>
+</div>
+<h5 class="text-xl font-bold mb-3">Multi-Language Support</h5>
+<p class="text-gray-500 text-sm leading-relaxed">Real-time translation for 120+ languages and local dialects during emergency calls.</p>
+</div>
+<!-- Card 2 -->
+<div class="p-8 rounded-xl bg-background-light dark:bg-background-dark border border-gray-100 dark:border-white/5 hover:border-primary/30 transition-all group">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">signal_cellular_alt</span>
+</div>
+<h5 class="text-xl font-bold mb-3">Low-Network Priority</h5>
+<p class="text-gray-500 text-sm leading-relaxed">Optimized data packets ensure functionality even on edge networks and during congestion.</p>
+</div>
+<!-- Card 3 -->
+<div class="p-8 rounded-xl bg-background-light dark:bg-background-dark border border-gray-100 dark:border-white/5 hover:border-primary/30 transition-all group">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<h5 class="text-xl font-bold mb-3">HIPAA &amp; GDPR Ready</h5>
+<p class="text-gray-500 text-sm leading-relaxed">Enterprise-grade security with end-to-end encryption for sensitive patient information.</p>
+</div>
+<!-- Card 4 -->
+<div class="p-8 rounded-xl bg-background-light dark:bg-background-dark border border-gray-100 dark:border-white/5 hover:border-primary/30 transition-all group">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">history</span>
+</div>
+<h5 class="text-xl font-bold mb-3">Real-time Archival</h5>
+<p class="text-gray-500 text-sm leading-relaxed">Automated transcription and logs for post-incident reporting and training analysis.</p>
+</div>
+<!-- Card 5 -->
+<div class="p-8 rounded-xl bg-background-light dark:bg-background-dark border border-gray-100 dark:border-white/5 hover:border-primary/30 transition-all group">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">api</span>
+</div>
+<h5 class="text-xl font-bold mb-3">RESTful Architecture</h5>
+<p class="text-gray-500 text-sm leading-relaxed">Integrate with existing CAD (Computer Aided Dispatch) systems in less than 48 hours.</p>
+</div>
+<!-- Card 6 -->
+<div class="p-8 rounded-xl bg-background-light dark:bg-background-dark border border-gray-100 dark:border-white/5 hover:border-primary/30 transition-all group">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h5 class="text-xl font-bold mb-3">Predictive Routing</h5>
+<p class="text-gray-500 text-sm leading-relaxed">AI models that predict incident clusters and suggest unit staging during peak hours.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- API & Pricing Section -->
+<section class="py-24 bg-[#1b0d0d] text-white" id="api">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="flex flex-col xl:flex-row gap-16">
+<!-- Code Snippet -->
+<div class="flex-1">
+<h2 class="text-3xl font-bold mb-6">Developer First Infrastructure</h2>
+<div class="rounded-xl overflow-hidden bg-navy-deep border border-white/10 shadow-2xl">
+<div class="flex items-center justify-between px-4 py-3 bg-white/5 border-b border-white/10">
+<div class="flex gap-2">
+<div class="size-3 rounded-full bg-[#332222]"></div>
+<div class="size-3 rounded-full bg-[#332222]"></div>
+<div class="size-3 rounded-full bg-[#332222]"></div>
+</div>
+<span class="text-xs text-white/40 font-mono tracking-widest uppercase">POST /v1/emergency</span>
+</div>
+<div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto">
+<p class="text-gray-500"># Send audio stream to RespondAI</p>
+<p class="text-blue-400">response = <span class="text-white">client.emergency.process(</span></p>
+<p class="pl-8 text-green-400">audio_stream=<span class="text-yellow-400">"input_file_or_stream"</span>,</p>
+<p class="pl-8 text-green-400">language_detect=<span class="text-primary">True</span>,</p>
+<p class="pl-8 text-green-400">priority_eval=<span class="text-primary">True</span></p>
+<p class="text-white">)</p>
+<br/>
+<p class="text-gray-500"># Output: 201 Created</p>
+<p class="text-yellow-400">{</p>
+<p class="pl-8 text-white">"id": "EM-90210",</p>
+<p class="pl-8 text-white">"type": "medical_emergency",</p>
+<p class="pl-8 text-white">"lat": 34.0522, "lon": -118.2437,</p>
+<p class="pl-8 text-white">"latency_ms": 84.5</p>
+<p class="text-yellow-400">}</p>
+</div>
+</div>
+</div>
+<!-- Pricing Cards -->
+<div class="flex-1 flex flex-col md:flex-row gap-6" id="pricing">
+<!-- Starter -->
+<div class="flex-1 p-8 rounded-xl bg-white/5 border border-white/10 flex flex-col">
+<h6 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">Sandbox</h6>
+<p class="text-4xl font-bold mb-6">$0<span class="text-lg font-normal text-gray-400">/mo</span></p>
+<ul class="space-y-4 mb-8 flex-1">
+<li class="flex items-center gap-2 text-sm text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> 5,000 API calls
+                                </li>
+<li class="flex items-center gap-2 text-sm text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> Community Support
+                                </li>
+<li class="flex items-center gap-2 text-sm text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> 3-Language Support
+                                </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-white/20 hover:bg-white/10 transition-colors font-bold">Start Testing</button>
+</div>
+<!-- Enterprise -->
+<div class="flex-1 p-8 rounded-xl bg-primary flex flex-col shadow-xl shadow-primary/20">
+<h6 class="text-sm font-bold uppercase tracking-widest text-white/80 mb-2">Enterprise</h6>
+<p class="text-4xl font-bold mb-6">Custom</p>
+<ul class="space-y-4 mb-8 flex-1">
+<li class="flex items-center gap-2 text-sm text-white">
+<span class="material-symbols-outlined text-white text-lg">check</span> Unlimited Scale
+                                </li>
+<li class="flex items-center gap-2 text-sm text-white">
+<span class="material-symbols-outlined text-white text-lg">check</span> 99.99% SLA
+                                </li>
+<li class="flex items-center gap-2 text-sm text-white">
+<span class="material-symbols-outlined text-white text-lg">check</span> Dedicated 24/7 Support
+                                </li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-white text-primary font-bold shadow-lg">Contact Sales</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 overflow-hidden bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto px-6 mb-12 text-center">
+<h2 class="text-3xl font-bold mb-4">Trusted by Public Safety Leaders</h2>
+</div>
+<div class="flex gap-12 items-center justify-center grayscale opacity-60 hover:grayscale-0 transition-all">
+<div class="text-2xl font-bold opacity-30 px-6">METRO-FIRE</div>
+<div class="text-2xl font-bold opacity-30 px-6">CITY_POLICE</div>
+<div class="text-2xl font-bold opacity-30 px-6">EMERGE_HUB</div>
+<div class="text-2xl font-bold opacity-30 px-6">SAFE_NET</div>
+</div>
+<div class="mt-16 max-w-[800px] mx-auto px-6 italic text-center text-xl text-gray-600 dark:text-gray-400">
+                "RespondAI reduced our voice-to-dispatch time by nearly 70%. In our field, that isn't just a performance metric—it's a lifesaver."
+                <div class="mt-4 not-italic font-bold text-[#1b0d0d] dark:text-white">
+                    — Chief Sarah Jenkins, Metro Emergency Services
+                </div>
+</div>
+</section>
+<!-- Final CTA Banner -->
+<section class="px-6 py-20">
+<div class="max-w-[1000px] mx-auto rounded-3xl bg-primary p-12 text-center text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<svg class="h-full w-full" fill="none" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 0 L100 0 L100 100 L0 100 Z" fill="url(#grad1)"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:white;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:black;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-5xl font-black mb-6">Ready to save lives with AI?</h2>
+<p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Join the 400+ municipalities upgrading their response infrastructure today.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-8 py-4 bg-white text-primary rounded-xl font-black text-lg shadow-xl">Get Started Now</button>
+<button class="px-8 py-4 bg-navy-deep text-white rounded-xl font-black text-lg">Talk to an Expert</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-navy-deep pt-20 pb-10 border-t border-[#f3e7e7] dark:border-white/5">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-[#1b0d0d] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">RespondAI</h2>
+</div>
+<p class="text-gray-500 text-sm leading-relaxed">Modernizing the backbone of emergency response through reliable, ultra-fast AI infrastructure.</p>
+<div class="flex gap-4 mt-2">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+</div>
+<div>
+<h3 class="font-bold mb-6">Product</h3>
+<ul class="space-y-4 text-sm text-gray-500">
+<li><a class="hover:text-primary transition-colors" href="#">Emergency API</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Triage Intelligence</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Analytics Suite</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Case Studies</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold mb-6">Company</h3>
+<ul class="space-y-4 text-sm text-gray-500">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Safety Ethics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold mb-6">Legal</h3>
+<ul class="space-y-4 text-sm text-gray-500">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">HIPAA Compliance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Security Overview</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-6 pt-10 border-t border-[#f3e7e7] dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-gray-400">© 2024 RespondAI Inc. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Systems Operational</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
